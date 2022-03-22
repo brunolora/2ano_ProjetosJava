@@ -1,0 +1,19 @@
+package br.com.fiap.jpa.entity;
+
+import java.time.LocalDateTime;
+
+public class Disciplina {
+	
+	public Long id;
+	
+	public String nome;
+	
+	public int cargaHoraria;
+	
+	public boolean ativo;
+	
+	public LocalDateTime dataCriacao;
+	
+	public LocalDateTime dataAtualizada;
+
+}

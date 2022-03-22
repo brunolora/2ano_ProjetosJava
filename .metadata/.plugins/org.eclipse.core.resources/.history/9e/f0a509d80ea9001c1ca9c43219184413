@@ -1,0 +1,76 @@
+package br.com.fiap.jpa;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+//import java.util.List;
+
+import javax.persistence.*;
+
+import br.com.fiap.jpa.dao.PersistenceManager;
+import br.com.fiap.jpa.entity.Aluno;
+
+public class App {
+
+	public static void main(String[] args) {
+		EntityManagerFactory entityManagerFactory = PersistenceManager.getInstance().getEntityManagerFactory();
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		entityManager.getTransaction().begin();
+		
+		Aluno aluno = new Aluno();
+		aluno.setNome("Lora");
+		aluno.setMatricula("RM89321");
+		aluno.setCpf("540.300.878-09");
+		aluno.setDataNascimento(LocalDate.of(2003, 7, 24));
+		aluno.setAtivo(true);
+		aluno.setDataCadastro(LocalDateTime.now());
+		aluno.setDataAtualizacao(LocalDateTime.now());
+		
+		Aluno aluno2 = new Aluno();
+		aluno2.setNome("Menega");
+		aluno2.setMatricula("RM88123");
+		aluno2.setCpf("123.456.789-10");
+		aluno2.setDataNascimento(LocalDate.of(2012, 9, 14));
+		aluno2.setAtivo(true);
+		aluno2.setDataCadastro(LocalDateTime.now());
+		aluno2.setDataAtualizacao(LocalDateTime.now());
+		
+		Aluno aluno3 = new Aluno();
+		aluno3.setNome("Olsenpera");
+		aluno3.setMatricula("RM32141");
+		aluno3.setCpf("596.313.564-02");
+		aluno3.setDataNascimento(LocalDate.of(2003, 05, 27));
+		aluno3.setAtivo(true);
+		aluno3.setDataCadastro(LocalDateTime.now());
+		aluno3.setDataAtualizacao(LocalDateTime.now());
+		
+		
+		entityManager.persist(aluno);
+		entityManager.persist(aluno2);
+		entityManager.persist(aluno3);
+		
+//		Query query = entityManager.createQuery("SELECT a FROM Aluno a");
+//		List<Aluno> resultado = query.getResultList();
+//		for (Aluno a : resultado) { 
+//			System.out.println();
+//		}
+////	
+		
+//		Aluno aluno = entityManager.find(Aluno.class, 1L);
+//		
+//		System.out.println(aluno);
+//		
+//		entityManager.remove(aluno);
+//		
+//		if (entityManager.find(aluno.getClass(), 1L) == null){
+//			System.out.println("Aluno excluido!");
+//		}
+		
+//		aluno.setNome("Aluno Novo");
+//		aluno.setCpf("17078074858");
+//		aluno.setMatricula("RM32109");
+		
+		entityManager.getTransaction().commit();
+		entityManager.close();
+		entityManagerFactory.close();
+	}
+}

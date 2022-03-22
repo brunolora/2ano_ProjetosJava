@@ -1,0 +1,41 @@
+Strategy
+diferentes variações de um algoritmo dentro de um objeto e poder trocar de um algoritmo para outro durante a execução.
+Muito if's dependendo da troca de algoritmo, da para otimizar.
+Exemplo: Maps
+
+Chain of Responsibility
+Diversos handles em uma ordem específica.
+Um conjunto de métodos deve ser executado em sequência, chamando o próximo método até o final da lista ligada.
+Corrente que vai passando um para outro até quebrar/ou passa em todos.
+
+------------------------------------------------------------------------------------------------------------------
+
+Template Method
+Classe que tem muitas classes filhas que implementam um msm metodo de formas muito parecidas, 
+porem com uma pequena diferença.
+
+State
+Varios estados, muda de "classe" dependendo do seu estado interno.
+Sequencia de if's que verificam o estado do objeto e chamam uma classe específica dependendo do estado atual. 
+melhora o desempenho
+Exemplo: Rascunho, moderação, publicado.
+
+Observer
+Mecanismo de assinatura.
+Listener and Publisher
+Por exemplo: Correio entragando jornal pros assinantes.
+
+-----------------------------------------------------------------------------------------------------------------
+
+Proxy
+Intermediário para facilitar a execução
+Exemplo: Funcionario ---> Gerente ---> Dono 1:1
+
+Facade
+Intermediário que chama varias classes
+Exemplo: Dono ---> Gerente ---*> Funcionario 1:N
+
+Decorator
+Acople novos comportamentos para objetos ao colocá-los dentro de invólucros de objetos que contém o comportamentos.
+Caixas dentro de caixas que passa para todos obrigatoriamente.
+Exemplo: Notificação (Facebook, sms, slack --- vai se juntando)

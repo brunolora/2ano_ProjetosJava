@@ -1,0 +1,12 @@
+package br.com.fiap.jpa.dao.imp1;
+
+import br.com.fiap.jpa.dao.HibernateGenericDao;
+import br.com.fiap.jpa.entity.Aluno;
+
+public class AlunoDAOImp1 extends HibernateGenericDao<Aluno, Long> {
+	
+	public AlunoDaoImp1() {
+		super(Aluno.class);
+	}
+
+}

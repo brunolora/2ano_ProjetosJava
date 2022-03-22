@@ -1,0 +1,18 @@
+package br.com.fiap.jpa.service;
+
+import javax.persistence.EntityManager;
+
+import br.com.fiap.jpa.dao.PersistenceManager;
+
+public abstract class GenericService {
+
+	private EntityManager entityManager;
+
+	public EntityManager getEntityManager() {
+		if (entityManager == null) {
+			entityManager = PersistenceManager.getInstance().getEntityManagerFactory().createEntityManager();
+			entityManager.getTransaction().begin();
+		}
+	}
+
+}

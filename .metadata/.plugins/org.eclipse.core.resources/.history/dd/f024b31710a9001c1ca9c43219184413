@@ -1,0 +1,8 @@
+package br.com.fiap.jpa.dao;
+
+import java.io.Serializable;
+
+public class HibernateGenericDao<T extends Serializable, PK extends	 Serializable> implements GenericDao<T, PK>{ 
+	
+	
+}

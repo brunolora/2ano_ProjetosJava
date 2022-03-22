@@ -1,0 +1,32 @@
+package br.com.fiap.jpa.service;
+
+import javax.persistence.EntityManager;
+
+import br.com.fiap.jpa.dao.PersistenceManager;
+
+public abstract class GenericService {
+
+	private EntityManager entityManager;
+	
+	public static void inserir(T, instancia);
+	public static void atualizar(T, instancia);
+	public static void remover(PK, id);
+	public static T obter(PK, id);
+	public static List<T> listar();
+
+	public EntityManager getEntityManager() {
+		if (entityManager == null) {
+			entityManager = PersistenceManager.getInstance().getEntityManagerFactory().createEntityManager();
+			entityManager.getTransaction().begin();
+		}
+		return entityManager;
+	}
+	
+	public void closeEntityManager() {
+		if (entityManager != null) {
+			entityManager.getTransaction().commit();
+			entityManager.close();
+		}
+	}
+
+}

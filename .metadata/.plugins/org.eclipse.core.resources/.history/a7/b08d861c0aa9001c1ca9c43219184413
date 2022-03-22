@@ -1,0 +1,18 @@
+package br.com.fiap.jpa.dao;
+
+public class PersistenceManager {
+	
+	private static PersistenceManager instance;
+	
+	private PersistenceManager() {
+		
+	}
+	
+	private static PersistenceManager getInstance() {
+		if (instance == null) {
+			instance = new PersistenceManager();
+		}
+		return instance;
+	}
+
+}

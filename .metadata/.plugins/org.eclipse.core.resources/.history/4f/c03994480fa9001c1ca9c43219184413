@@ -1,0 +1,13 @@
+package br.com.fiap.jpa.dao;
+
+import java.io.Serializable;
+import java.util.List;
+
+public interface GenericDao<T extends Serializable, PK extends Serializable> {
+
+	void inserir(T instancia, EntityManager entityManager);
+	void atualizar(T instancia);
+	void remover(PK id);
+	T obterPorId(PK id);
+	List<T> listar();
+}
